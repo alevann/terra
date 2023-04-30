@@ -1,0 +1,14 @@
+{
+  "name": "terra",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4",
+    "ts-alias": "^0.0.7"
+  }
+}
