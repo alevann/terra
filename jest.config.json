@@ -1,6 +1,4 @@
 {
-  "preset": "ts-jest",
-  "testEnvironment": "node",
   "cacheDirectory": ".jest/cache",
   "collectCoverage": true,
   "collectCoverageFrom": [
@@ -9,10 +7,20 @@
     "!**/tests/**"
   ],
   "coverageDirectory": ".jest/coverage",
+  "preset": "ts-jest",
   "roots": [
     "<rootDir>/tests"
   ],
+  "testEnvironment": "node",
   "testMatch": [
     "**/*.test?(s).ts"
-  ]
+  ],
+  "transform": {
+    "test?(s).ts$": [
+      "ts-jest",
+      {
+        "tsconfig": "./tsconfig.tests.json"
+      }
+    ]
+  }
 }
