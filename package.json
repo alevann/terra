@@ -5,14 +5,15 @@
   "main": "dist",
   "scripts": {
     "build": "tsc && tsc-alias",
-    "build:watch": "tsc --watch",
+    "build:watch": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
     "prepare": "npm run build",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
-    "tsc-alias": "^1.8.6",
+    "concurrently": "^8.0.1",
     "ts-jest": "^29.1.0",
+    "tsc-alias": "^1.8.6",
     "typescript": "^5.0.4"
   }
 }
