@@ -31,7 +31,7 @@ export const render = (element: Element, parent?: HTMLElement): AbortRender => {
 
 // TODO: this should check the deadline and possibly delay the render?
 //  Maybe there's a better way than just ignoring it?
-const checkCommit = (nextUnitOfWork: Fiber, deadline: IdleDeadline) => {
+const checkCommit = (nextUnitOfWork: Fiber, _: IdleDeadline) => {
   if (nextUnitOfWork || !RenderingContext.currentWIPRoot) {
     return
   }
