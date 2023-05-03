@@ -1,5 +1,5 @@
 import { getPreviousHook, saveHook } from './utils'
-import { Effect } from '../types'
+import { Effect } from '@/types'
 
 type UseEffectHook = {
   teardown: (() => unknown) | void

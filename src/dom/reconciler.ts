@@ -1,4 +1,4 @@
-import { Effect, Element, Fiber } from '../types'
+import { Effect, Element, Fiber } from '@/types'
 
 /**
  * Reconciles a fiber and its children

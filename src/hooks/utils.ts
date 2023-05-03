@@ -1,6 +1,6 @@
-import { isFunctional } from '../fiber'
-import Terra from '../Terra'
-import { FunctionalFiber } from '../types'
+import { isFunctional } from '@/fiber'
+import Terra from '@/Terra'
+import { FunctionalFiber } from '@/types'
 
 export const getPreviousHook = <T = any> (): [Optional<T>, FunctionalFiber] => {
   const { rendering } = Terra

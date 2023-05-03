@@ -1,4 +1,4 @@
-import { Element, ElementProps, ElementType } from './types'
+import { Element, ElementProps, ElementType } from '@/types'
 
 /**
  * This function is the function that JSX compiles down to,

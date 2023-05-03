@@ -1,4 +1,4 @@
-import { ConstantFiber, ElementProps, Fiber } from '../types'
+import { ConstantFiber, ElementProps, Fiber } from '@/types'
 
 /**
  * Creates a new node and immediately commits it to the DOM

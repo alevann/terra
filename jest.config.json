@@ -22,5 +22,8 @@
         "tsconfig": "./tsconfig.tests.json"
       }
     ]
+  },
+  "moduleNameMapper": {
+    "^@/(.*)": "<rootDir>/src/$1"
   }
 }

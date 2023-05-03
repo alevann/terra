@@ -1,5 +1,5 @@
-import { Scheduler } from './scheduler'
-import { Fiber } from './types'
+import { Scheduler } from '@/scheduler'
+import { Fiber } from '@/types'
 
 type ITerra = {
   currentHookIndex: number

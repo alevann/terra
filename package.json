@@ -4,14 +4,14 @@
   "type": "module",
   "main": "dist",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "build:watch": "tsc --watch",
     "prepare": "npm run build",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
-    "ts-alias": "^0.0.7",
+    "tsc-alias": "^1.8.6",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   }

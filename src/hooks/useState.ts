@@ -1,5 +1,5 @@
 import { getPreviousHook, saveHook } from './utils'
-import Terra from '../Terra'
+import Terra from '@/Terra'
 
 type Consumer <T> = (state: T) => T
 type SetState <T> = (updater: Consumer<T>) => void

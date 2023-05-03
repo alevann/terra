@@ -1,9 +1,9 @@
-import { isFunctional } from '../fiber'
-import Terra from '../Terra'
-import { ConstantFiber, Effect, Element, Fiber, FunctionalFiber } from '../types'
+import { isFunctional } from '@/fiber'
+import Terra from '@/Terra'
+import { ConstantFiber, Effect, Element, Fiber, FunctionalFiber } from '@/types'
 import Painter from './painter'
 import Reconciler from './reconciler'
-import Scheduler from '../scheduler'
+import Scheduler from '@/scheduler'
 
 const { rendering: RenderingContext } = Terra
 

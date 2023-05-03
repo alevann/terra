@@ -17,14 +17,14 @@ export type ElementProps<Props extends Record<string, any> = any> = Element<Prop
 /**
  * A functional element, is any function which returns an element (JSX)
  */
-export type FunctionalElement<Props extends Record<string, any> = unknown> = Element<Props> & {
+export type FunctionalElement<Props extends Record<string, any> = any> = Element<Props> & {
   type: ElementFactory
 }
 
 /**
  * A constant element, is an element which uses default HTML tags
  */
-export type ConstantElement<Props extends Record<string, any> = unknown> = Element<Props> & {
+export type ConstantElement<Props extends Record<string, any> = any> = Element<Props> & {
   type: ElementName
 }
 

@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
-    "module": "ES6",
-    "target": "es6",
-    "sourceMap": true,
-    "rootDir": "src",
-    "outDir": "dist",
+    "baseUrl": "src",
     "declaration": true,
     "declarationMap": true,
-    "lib": ["DOM", "es2017"],
-    "moduleResolution": "Node"
+    "lib": [
+      "DOM",
+      "es2017"
+    ],
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "sourceMap": true,
+    "target": "es6"
   },
   "exclude": [
     "node_modules",
