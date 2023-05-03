@@ -8,10 +8,12 @@
     "declaration": true,
     "declarationMap": true,
     "lib": ["DOM", "es2017"],
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "tests"
   ]
 }

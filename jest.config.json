@@ -1,0 +1,18 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "cacheDirectory": ".jest/cache",
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/*.ts",
+    "!**/node_modules/**",
+    "!**/tests/**"
+  ],
+  "coverageDirectory": ".jest/coverage",
+  "roots": [
+    "<rootDir>/tests"
+  ],
+  "testMatch": [
+    "**/*.test?(s).ts"
+  ]
+}
