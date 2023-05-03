@@ -1,5 +1,7 @@
 # Terra
 
+![tests](https://github.com/alevann/terra/actions/workflows/jest.yml?event=push)
+
 A React clone
 
 ## TODO
