@@ -14,6 +14,12 @@ type ITerra = {
 }
 
 const triggerRender = () => {
+  if (!Terra.rendering.currentDOMFiber) {
+    throw new Error('setState has been called during the first render, ' +
+      'this is not supported because why would you do that? ' +
+      '(also it causes a crash that I don\'t feel like fixing so...)')
+  }
+
   Terra.rendering.currentWIPRoot = {
     type: null,
     node: Terra.rendering.currentDOMFiber.node,

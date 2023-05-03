@@ -51,7 +51,7 @@ const commit = (fiber: Fiber) => {
   if (fiber.effect === Effect.Create && fiber.node !== null) {
     Painter.appendNode(fiber.node, parentNode)
   } else if (fiber.effect === Effect.Update) {
-    Painter.updateNode(fiber.node, fiber.shadow.props, fiber.props)
+    Painter.updateNode(fiber.node ?? parentNode, fiber.shadow.props, fiber.props)
   } else if (fiber.effect === Effect.Delete) {
     Painter.deleteNode(fiber, parentNode)
   }
@@ -84,7 +84,6 @@ const process = (fiber: Fiber): Optional<Fiber> => {
   let next = fiber
   while (next) {
     if (next.sibling) {
-      console.log(fiber)
       return next.sibling
     }
     next = next.parent
