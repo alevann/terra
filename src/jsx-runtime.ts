@@ -20,8 +20,20 @@ import { Element, ElementProps, ElementType } from './types'
  * @param element a function that returns a VDOM node, or an HTML tag name
  * @param attr the attributes of the element, along with its children
  */
-export const jsx = (element: ElementType, { children, ...props }: ElementProps): Element => {
-  if (!Array.isArray(children)) {
+export const jsx = (element: ElementType, attr: ElementProps): Element => {
+  if (!attr) {
+    return {
+      type: element,
+      props: {
+        children: []
+      }
+    }
+  }
+
+  let { children, ...props } = attr
+  if (children === undefined) {
+    children = []
+  } else if (!Array.isArray(children)) {
     children = [children]
   }
   children = children.map(child => (

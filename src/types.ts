@@ -12,7 +12,7 @@ export type Element<Props extends Record<string, any> = unknown> = {
   }
 }
 
-export type ElementProps<Props extends Record<string, any> = unknown> = Element<Props>['props']
+export type ElementProps<Props extends Record<string, any> = any> = Element<Props>['props']
 
 /**
  * A functional element, is any function which returns an element (JSX)
