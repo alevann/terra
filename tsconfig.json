@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
     "lib": [
@@ -12,7 +12,7 @@
     "outDir": "dist",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
       ]
     },
     "sourceMap": true,
@@ -20,7 +20,6 @@
   },
   "exclude": [
     "node_modules",
-    "dist",
-    "tests"
+    "dist"
   ]
 }

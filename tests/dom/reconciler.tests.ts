@@ -41,7 +41,7 @@ describe('reconcile', () => {
     wipFiber.shadow.child = {
       type: 'div',
       props: { className: 'initial' },
-      node: document.createElement('div'),
+      node: null,
       shadow: null,
       effect: null,
     }
@@ -57,7 +57,7 @@ describe('reconcile', () => {
     wipFiber.shadow.child = {
       type: 'div',
       props: { className: 'initial' },
-      node: document.createElement('div'),
+      node: null,
       shadow: null,
       effect: null,
       sibling: {
@@ -65,7 +65,7 @@ describe('reconcile', () => {
         props: { children: [] },
         shadow: null,
         effect: null,
-      },
+      }
     }
     Reconciler.reconcile(wipFiber, elements, pendingRemoval)
     expect(wipFiber.child?.type).toEqual('span')

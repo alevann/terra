@@ -38,7 +38,7 @@ const reconcile = (wipFiber: Fiber, elements: Element[], pendingRemoval?: Fiber[
         effect: Effect.Create
       }
     }
-    if (oldFiber && !sameType) {
+    if (oldFiber && sameType === false) {
       oldFiber.effect = Effect.Delete
       pendingRemoval.push(oldFiber)
     }

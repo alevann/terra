@@ -19,7 +19,7 @@
     "test?(s).ts$": [
       "ts-jest",
       {
-        "tsconfig": "./tsconfig.tests.json"
+        "tsconfig": ".config/tsconfig.tests.json"
       }
     ]
   },

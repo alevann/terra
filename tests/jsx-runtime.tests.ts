@@ -1,4 +1,4 @@
-import { jsx } from '../src/jsx-runtime'
+import { jsx } from '@/jsx-runtime'
 
 describe('JSX with default HTML tags', () => {
   it('should transform a simple element with an ID and text content', () => {
