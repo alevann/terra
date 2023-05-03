@@ -1,6 +1,6 @@
 # Terra
 
-![tests](https://github.com/alevann/terra/actions/workflows/test.yml/badge.svg?event=push)
+![tests](https://github.com/alevann/terra/actions/workflows/tests.yml/badge.svg?event=push)
 
 A React clone
 
