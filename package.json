@@ -12,8 +12,12 @@
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "concurrently": "^8.0.1",
+    "jest-environment-jsdom": "^29.5.0",
     "ts-jest": "^29.1.0",
     "tsc-alias": "^1.8.6",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "jsdom": "^22.0.0"
   }
 }

@@ -43,7 +43,7 @@ const updateNode = (node: HTMLElement, prev: ElementProps, next: ElementProps) =
   const isNew = key => prev[key] !== next[key]
   const isGone = key => !(key in next)
 
-  // Remove old event listeners, may have been removed completely or changed
+  // Remove old event listeners
   Object.keys(prev)
     .filter(isEvent)
     .filter(key => isGone(key) || isNew(key))
@@ -59,7 +59,7 @@ const updateNode = (node: HTMLElement, prev: ElementProps, next: ElementProps) =
       const type = name.toLowerCase().substring(2)
       node.addEventListener(type, next[name])
     })
-  // Remove old properties, may have been removed completely or changed
+  // Remove old properties
   Object.keys(prev)
     .filter(isProperty)
     .filter(isGone)
@@ -73,6 +73,18 @@ const updateNode = (node: HTMLElement, prev: ElementProps, next: ElementProps) =
     .forEach(name => {
       node[name] = next[name]
     })
+
+  // The style of an object is readonly, so it must be applied separately
+  const ps = prev.style ?? {}
+  const ns = next.style ?? {}
+
+  Object.keys(ps)
+    .filter(key => !(key in ns))
+    .forEach(style => node.style[style] = '')
+
+  Object.keys(ns)
+    .filter(key => ns[key] !== ps[key])
+    .forEach(style => node.style[style] = ns[style])
 }
 
 /**
