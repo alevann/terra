@@ -7,7 +7,7 @@
       "DOM",
       "es2017"
     ],
-    "module": "ES6",
+    "module": "esnext",
     "moduleResolution": "Node",
     "outDir": "dist",
     "paths": {
@@ -16,7 +16,7 @@
       ]
     },
     "sourceMap": true,
-    "target": "es6"
+    "target": "es2015"
   },
   "exclude": [
     "node_modules",

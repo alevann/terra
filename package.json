@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "dist",
+  "types": "dist",
   "scripts": {
     "build": "tsc --project .config/tsconfig.dist.json && tsc-alias -p .config/tsconfig.dist.json",
     "build:watch": "tsc --project .config/tsconfig.dist.json && (concurrently \"tsc -w --project .config/tsconfig.dist.json\" \"tsc-alias -w -p .config/tsconfig.dist.json\")",
