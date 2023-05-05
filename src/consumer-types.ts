@@ -1,7 +1,7 @@
-import { Element, Context as _Context, ElementFactory } from '@/types'
+import { Context as _Context } from '@/types'
 
 export type PropsWithChildren<Props = unknown> = Props & {
-  children: string | number | boolean | Element | ElementFactory | null | undefined
+  children: any // Whatever I can't fix it without this lol
 }
 
 export type Context<T> = Omit<_Context<T>, '$'>
