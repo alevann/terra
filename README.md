@@ -30,7 +30,7 @@ Stuff that needs to be done, but won't necessarily be done:
   * [ ] useReducer
   * [ ] useCallback
   * [ ] Do custom hooks even work?
-* [ ] Fragments
+* [x] Fragments
 * [ ] Lazy loading
 * [x] Tests
   * [x] This list is really depressing, so I'm marking this as done 

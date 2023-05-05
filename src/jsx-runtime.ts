@@ -11,26 +11,17 @@ import { Element, ElementProps, ElementType } from '@/types'
  *
  * @example Result of JSX compilation
  * const Component = <p id='my-id'>Hello world!</p>
- * const Compiled = jsx('p', { id: 'my-id', children: 'Hello world!' })
+ * const _Compiled = jsx('p', { id: 'my-id', children: 'Hello world!' })
  *
  * @example Nested JSX calls
  * const Component = <div><SomeComponent /> and text</div>
- * const Complied = jsx('div', { children: [jsx(SomeComponent, null), 'and text'] })
+ * const _Compiled = jsx('div', { children: [jsx(SomeComponent, null), 'and text'] })
  *
  * @param element a function that returns a VDOM node, or an HTML tag name
  * @param attr the attributes of the element, along with its children
  */
-export const jsx = (element: ElementType, attr: ElementProps): Element => {
-  if (!attr) {
-    return {
-      type: element,
-      props: {
-        children: []
-      }
-    }
-  }
-
-  let { children, ...props } = attr
+export const jsx = (element: ElementType, attr?: ElementProps): Element => {
+  let { children, ...props } = attr ?? {}
   if (children === undefined) {
     children = []
   } else if (!Array.isArray(children)) {
@@ -55,3 +46,14 @@ export const jsx = (element: ElementType, attr: ElementProps): Element => {
  * Not sure why, but without this I get some warnings so, here it is, babel...
  */
 export const jsxs = jsx
+
+/**
+ * This function is passed as the element to the jsx function when a fragment is used
+ *
+ * @example How a fragment is compiled
+ * const Component = <><Component /><Component /></>
+ * const _Compiled = jsx(Fragment, { children: [jsx(Component, null), jsx(Component, null)] })
+ */
+export const Fragment = ({ children }: { children: Element[] }): Element[] => {
+  return children
+}

@@ -94,7 +94,10 @@ const prepareFunctionalElement = (fiber: FunctionalFiber) => {
   RenderingContext.currentWIPFiber = fiber
   Terra.currentHookIndex = 0
   fiber.hooks = []
-  fiber.props.children = [fiber.type(fiber.props)]
+
+  // Fragments (which are functional fibers) return an array of children
+  const children = fiber.type(fiber.props)
+  fiber.props.children = Array.isArray(children) ? children : [children]
 }
 
 const prepareConstantElement = (fiber: ConstantFiber) => {
