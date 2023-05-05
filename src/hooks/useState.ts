@@ -18,7 +18,6 @@ export const useState = <T> (initial?: T): [T, SetState<T>] => {
 
   const setState = (action: Consumer<T>) => {
     hook.queue.push(action)
-    console.log('trigger render')
     Terra.rendering.triggerRender()
   }
 

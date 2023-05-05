@@ -92,4 +92,15 @@ describe('updateNode', () => {
     expect(node.style.color).toBe('')
     expect(node.style.backgroundColor).toBe('')
   })
+
+  test('updateNode preserves inline styles', () => {
+    const prevProps = { style: { color: 'white' } }
+    const nextProps = { style: { color: 'white' } }
+
+    Painter.updateNode(node, {}, prevProps)
+    expect(node.style.color).toBe('white')
+
+    Painter.updateNode(node, prevProps, nextProps)
+    expect(node.style.color).toBe('white')
+  })
 })

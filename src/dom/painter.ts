@@ -82,8 +82,9 @@ const updateNode = (node: HTMLElement, prev: ElementProps, next: ElementProps) =
     .filter(key => !(key in ns))
     .forEach(style => node.style[style] = '')
 
+  // FIXME: for some reason I can't pin-point inline styles are cleared every update and must be re-added
+  //  (I'm trying to add contexts and don't care enough right now)
   Object.keys(ns)
-    .filter(key => ns[key] !== ps[key])
     .forEach(style => node.style[style] = ns[style])
 }
 
