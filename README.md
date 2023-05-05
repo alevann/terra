@@ -20,16 +20,17 @@ Stuff that needs to be done, but won't necessarily be done:
 
 * [x] Update README
 * [ ] Fix public package API to allow importing directly from `terra/dom` instead of `terra/dist/dom`
-* [ ] Context API
-  * [ ] createContext
-  * [ ] useContext
-  * [ ] Context.Provider
+* [ ] `PropsWithChildren` causes TS2322 even if children are passed, no clue why
+* [x] Context API
+  * [x] createContext
+  * [x] useContext
+  * [x] Context.Provider
 * [ ] More hooks
   * [ ] useMemo
   * [ ] useRef
   * [ ] useReducer
   * [ ] useCallback
-  * [ ] Do custom hooks even work?
+  * [x] Do custom hooks even work? -- Hell yeah they do baby (apparently)
 * [x] Fragments
 * [ ] Lazy loading
 * [x] Tests

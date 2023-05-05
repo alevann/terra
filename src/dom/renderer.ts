@@ -1,4 +1,4 @@
-import { isFunctional } from '@/fiber'
+import { isContext, isFunctional } from '@/fiber'
 import Terra from '@/Terra'
 import { ConstantFiber, Effect, Element, Fiber, FunctionalFiber } from '@/types'
 import Painter from './painter'
@@ -87,6 +87,10 @@ const process = (fiber: Fiber): Optional<Fiber> => {
       return next.sibling
     }
     next = next.parent
+
+    if (next && isContext(next)) {
+      next.type.onChildrenRendered()
+    }
   }
 }
 

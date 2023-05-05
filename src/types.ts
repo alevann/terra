@@ -44,7 +44,7 @@ export type BaseFiber = {
   effect?: Effect
 }
 
-export type Fiber = FunctionalFiber | ConstantFiber
+export type Fiber = FunctionalFiber | ConstantFiber | ContextFiber
 
 export type FunctionalFiber = BaseFiber & {
   type: ElementFactory
@@ -53,4 +53,24 @@ export type FunctionalFiber = BaseFiber & {
 
 export type ConstantFiber = BaseFiber & {
   type: ElementName
+}
+
+export type ContextFiber = FunctionalFiber & {
+  type: ContextProvider
+}
+
+export type ProviderProps<T> = {
+  value: T,
+  children: Element | Element[]
+}
+export type ContextProvider<T = any> = {
+  (props: ProviderProps<T>): ProviderProps<T>['children']
+  $isContextProvider: boolean
+  onChildrenRendered: () => void
+}
+export type Context<T = any> = {
+  Provider: ContextProvider<T>
+  $: {
+    get value (): T
+  }
 }
