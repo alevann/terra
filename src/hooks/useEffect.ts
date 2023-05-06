@@ -1,4 +1,4 @@
-import { getPreviousHook, saveHook } from './utils'
+import { didDepsChange, getPreviousHook, saveHook } from './utils'
 import { Effect } from '@/types'
 
 type UseEffectHook = {
@@ -21,7 +21,7 @@ export const useEffect = (setup: () => UseEffectHook['teardown'], deps?: any[]) 
   }
 
   // If the dependencies changed, update the hook
-  if (prevHook?.deps && !didDepsChange(hook, prevHook)) {
+  if (prevHook?.deps && didDepsChange(hook, prevHook)) {
     hook.teardown && hook.teardown()
     hook.teardown = setup()
   }
@@ -35,8 +35,4 @@ export const useEffect = (setup: () => UseEffectHook['teardown'], deps?: any[]) 
   }
 
   saveHook(hook)
-}
-
-const didDepsChange = (hook: UseEffectHook, prev?: UseEffectHook): boolean => {
-  return hook.deps.reduce((a, dep, i) => a && (prev.deps[i] === dep), true)
 }

@@ -5,7 +5,7 @@ export type ElementType = ElementName | ElementFactory
 /**
  * An element is a node in the Virtual DOM, it may be a functional element or a constant element
  */
-export type Element<Props extends Record<string, any> = unknown> = {
+export type Element<Props extends Record<string, any> = any> = {
   type: ElementType
   props: Props & {
     children: Element[]
@@ -61,7 +61,7 @@ export type ContextFiber = FunctionalFiber & {
 
 export type ProviderProps<T> = {
   value: T,
-  children: Element | Element[]
+  children?: Element | Element[]
 }
 export type ContextProvider<T = any> = {
   (props: ProviderProps<T>): ProviderProps<T>['children']

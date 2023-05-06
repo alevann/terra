@@ -26,3 +26,10 @@ export const saveHook = (hook: any) => {
   Terra.rendering.currentWIPFiber.hooks.push(hook)
   Terra.currentHookIndex++
 }
+
+export const didDepsChange = (
+  hook: { deps: any[] },
+  prev?: { deps: any[] }
+): boolean => {
+  return !hook.deps.reduce((a, dep, i) => a && Object.is(prev.deps[i], dep), true)
+}

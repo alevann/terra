@@ -1,3 +1,5 @@
 export { useState } from './useState'
 export { useEffect } from './useEffect'
 export { useContext } from './useContext'
+export { useCallback } from './useCallback'
+export { useMemo } from './useMemo'

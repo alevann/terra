@@ -26,11 +26,12 @@ Stuff that needs to be done, but won't necessarily be done:
   * [x] useContext
   * [x] Context.Provider
 * [ ] More hooks
-  * [ ] useMemo
+  * [x] useMemo
   * [ ] useRef
   * [ ] useReducer
-  * [ ] useCallback
+  * [x] useCallback
   * [x] Do custom hooks even work? -- Hell yeah they do baby (apparently)
+  * [ ] Hook implementations should be tested (not manually)
 * [x] Fragments
 * [ ] Lazy loading
 * [x] Tests
