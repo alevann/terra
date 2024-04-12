@@ -2,8 +2,7 @@
   "name": "terra",
   "version": "1.0.0",
   "type": "module",
-  "main": "dist",
-  "types": "dist",
+  "types": "./dist/",
   "scripts": {
     "build": "tsc --project .config/tsconfig.dist.json && tsc-alias -p .config/tsconfig.dist.json",
     "build:watch": "tsc --project .config/tsconfig.dist.json && (concurrently \"tsc -w --project .config/tsconfig.dist.json\" \"tsc-alias -w -p .config/tsconfig.dist.json\")",
@@ -18,5 +17,10 @@
     "ts-jest": "^29.1.0",
     "tsc-alias": "^1.8.6",
     "typescript": "^5.0.4"
+  },
+  "exports": {
+    "./dom": "./dist/dom/index.js",
+    "./jsx-runtime": "./dist/jsx-runtime.js",
+    "./hooks": "./dist/hooks/index.js"
   }
 }
