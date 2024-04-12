@@ -19,6 +19,7 @@
     "typescript": "^5.0.4"
   },
   "exports": {
+    ".": "./dist/index.js",
     "./dom": "./dist/dom/index.js",
     "./jsx-runtime": "./dist/jsx-runtime.js",
     "./hooks": "./dist/hooks/index.js"
